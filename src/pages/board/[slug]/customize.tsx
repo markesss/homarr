@@ -108,6 +108,7 @@ export default function CustomizationPage({
         metaTitle: config?.settings.customization.metaTitle ?? '',
         logoSrc: config?.settings.customization.logoImageUrl ?? '',
         faviconSrc: config?.settings.customization.faviconUrl ?? '',
+        pwaSrc: config?.settings.customization.pwaUrl ?? '',
       },
     },
     validate: i18nZodResolver(boardCustomizationSchema),

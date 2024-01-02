@@ -25,6 +25,7 @@ export const boardCustomizationSchema = z.object({
     metaTitle: z.string(),
     logoSrc: z.string(),
     faviconSrc: z.string(),
+    pwaSrc: z.string(),
   }),
   appearance: z.object({
     backgroundSrc: z.string(),

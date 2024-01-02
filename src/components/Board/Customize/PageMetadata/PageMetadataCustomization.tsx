@@ -1,4 +1,4 @@
-import { Grid, Stack, TextInput } from '@mantine/core';
+import { Grid, TextInput } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
 
 import { useBoardCustomizationFormContext } from '../form';
@@ -38,6 +38,14 @@ export const PageMetadataCustomization = () => {
           description={t('favicon.description')}
           placeholder="/imgs/favicon/favicon.svg"
           {...form.getInputProps('pageMetadata.faviconSrc')}
+        />
+      </Grid.Col>
+      <Grid.Col span={12} sm={6}>
+        <TextInput
+          label="PWA Manifest"
+          description="Path to custom PWA Manifest for this board"
+          placeholder="/site.webmanifest"
+          {...form.getInputProps('pageMetadata.pwaSrc')}
         />
       </Grid.Col>
     </Grid>

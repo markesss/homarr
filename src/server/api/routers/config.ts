@@ -12,9 +12,6 @@ import { boardCustomizationSchema } from '~/validations/boards';
 import { IRssWidget } from '~/widgets/rss/RssWidgetTile';
 
 import { adminProcedure, createTRPCRouter, publicProcedure } from '../trpc';
-import { db } from '~/server/db';
-import { users } from '~/server/db/schema';
-import { sql } from 'drizzle-orm';
 
 export const configNameSchema = z.string().regex(/^[a-zA-Z0-9-_]+$/);
 
@@ -206,6 +203,7 @@ export const configRouter = createTRPCRouter({
             },
             customCss: input.appearance.customCss,
             faviconUrl: input.pageMetadata.faviconSrc,
+            pwaUrl: input.pageMetadata.pwaSrc,
             gridstack: {
               columnCountSmall: input.gridstack.sm,
               columnCountMedium: input.gridstack.md,
