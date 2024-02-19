@@ -17,6 +17,15 @@
       },
       "textLinesClamp": {
         "label": "Затискач текстових рядків"
+      },
+      "sortByPublishDateAscending": {
+        "label": ""
+      },
+      "sortPostsWithoutPublishDateToTheTop": {
+        "label": ""
+      },
+      "maximumAmountOfPosts": {
+        "label": ""
       }
     },
     "card": {

@@ -17,6 +17,15 @@
       },
       "textLinesClamp": {
         "label": "Ограничение количества строк текста"
+      },
+      "sortByPublishDateAscending": {
+        "label": "Сортировать по дате публикации (по возрастанию)"
+      },
+      "sortPostsWithoutPublishDateToTheTop": {
+        "label": "Разместить сообщения без даты публикации вверху списка"
+      },
+      "maximumAmountOfPosts": {
+        "label": "Максимальное количество постов"
       }
     },
     "card": {

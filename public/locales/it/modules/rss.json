@@ -17,6 +17,15 @@
       },
       "textLinesClamp": {
         "label": "Blocco righe di testo"
+      },
+      "sortByPublishDateAscending": {
+        "label": "Ordina per data di pubblicazione (ascendente)"
+      },
+      "sortPostsWithoutPublishDateToTheTop": {
+        "label": "Metti i post senza data di pubblicazione in alto"
+      },
+      "maximumAmountOfPosts": {
+        "label": "Numero massimo di post"
       }
     },
     "card": {

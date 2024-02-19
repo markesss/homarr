@@ -17,6 +17,15 @@
       },
       "textLinesClamp": {
         "label": "Svorka textových riadkov"
+      },
+      "sortByPublishDateAscending": {
+        "label": "Zoradiť podľa dátumu vydania (vzostupne)"
+      },
+      "sortPostsWithoutPublishDateToTheTop": {
+        "label": "Umiestnite príspevky bez dátumu uverejnenia na začiatok"
+      },
+      "maximumAmountOfPosts": {
+        "label": "Maximálny počet príspevkov"
       }
     },
     "card": {

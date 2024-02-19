@@ -1,5 +1,4 @@
-import { IncomingMessage } from 'http';
-import { ServerResponse } from 'http';
+import { IncomingMessage, ServerResponse } from 'http';
 import { GetServerSidePropsContext } from 'next';
 import { SSRConfig } from 'next-i18next';
 import { ParsedUrlQuery } from 'querystring';
@@ -39,6 +38,9 @@ describe('login page', () => {
         redirectAfterLogin: null,
         isDemo: false,
         _i18Next: 'hello',
+        oidcAutoLogin: null,
+        oidcProviderName: null,
+        providers: undefined
       },
     });
 
@@ -76,6 +78,9 @@ describe('login page', () => {
         redirectAfterLogin: '/manage/users/create',
         isDemo: false,
         _i18Next: 'hello',
+        oidcAutoLogin: null,
+        oidcProviderName: null,
+        providers: undefined
       },
     });
 
@@ -113,6 +118,9 @@ describe('login page', () => {
         redirectAfterLogin: null,
         isDemo: false,
         _i18Next: 'hello',
+        oidcAutoLogin: null,
+        oidcProviderName: null,
+        providers: undefined
       },
     });
 

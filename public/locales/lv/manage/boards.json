@@ -15,6 +15,19 @@
             "delete": {
                 "label": "Neatgriezeniski dzēst",
                 "disabled": "Dzēšana atspējota, jo vecāki Homarr komponenti neļauj dzēst noklusējuma konfigurāciju. Dzēšana būs iespējama nākotnē."
+            },
+            "duplicate": "Dublicēt",
+            "rename": {
+                "label": "Pārdēvēt",
+                "modal": {
+                    "title": "Pārdēvēt dēli {{name}}",
+                    "fields": {
+                        "name": {
+                            "label": "Jauns nosaukums",
+                            "placeholder": "Jauns dēļa nosaukums"
+                        }
+                    }
+                }
             }
         },
         "badges": {

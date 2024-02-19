@@ -17,6 +17,15 @@
       },
       "textLinesClamp": {
         "label": "Límite de líneas de texto"
+      },
+      "sortByPublishDateAscending": {
+        "label": ""
+      },
+      "sortPostsWithoutPublishDateToTheTop": {
+        "label": ""
+      },
+      "maximumAmountOfPosts": {
+        "label": ""
       }
     },
     "card": {

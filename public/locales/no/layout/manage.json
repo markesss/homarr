@@ -9,7 +9,7 @@
         "users": {
             "title": "Brukere",
             "items": {
-                "manage": "Endre",
+                "manage": "Administrer",
                 "invites": "Invitasjoner"
             }
         },
@@ -25,7 +25,8 @@
         "tools": {
             "title": "Verktøy",
             "items": {
-                "docker": "Docker"
+                "docker": "Docker",
+                "api": "API"
             }
         },
         "about": {

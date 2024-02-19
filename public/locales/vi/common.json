@@ -13,6 +13,7 @@
   "previous": "Trước",
   "confirm": "Xác nhận",
   "enabled": "Bật",
+  "duplicate": "Nhân bản",
   "disabled": "Tắt",
   "enableAll": "Bật toàn bộ",
   "disableAll": "Tắt toàn bộ",
@@ -44,7 +45,7 @@
   },
   "seeMore": "Xem thêm...",
   "position": {
-    "left": "Bên trái",
+    "left": "Trái",
     "center": "Giữa",
     "right": "Phải"
   },

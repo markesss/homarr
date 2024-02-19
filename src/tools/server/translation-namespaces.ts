@@ -22,6 +22,7 @@ export const boardNamespaces = [
   'modules/dashdot',
   'modules/overseerr',
   'modules/media-server',
+  'modules/indexer-manager',
   'modules/common-media-cards',
   'modules/video-stream',
   'modules/media-requests-list',
@@ -31,6 +32,7 @@ export const boardNamespaces = [
   'modules/bookmark',
   'modules/notebook',
   'modules/smart-home/entity-state',
+  'modules/smart-home/trigger-automation',
   'widgets/error-boundary',
   'widgets/draggable-list',
   'widgets/location',
@@ -43,7 +45,7 @@ export const manageNamespaces = [
   'manage/users',
   'manage/users/invites',
   'manage/users/create',
-  'manage/users/edit'
+  'manage/users/edit',
 ];
 export const loginNamespaces = ['authentication/login'];
 

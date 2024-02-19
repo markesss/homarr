@@ -17,6 +17,15 @@
       },
       "textLinesClamp": {
         "label": "Περιορισμός γραμμών κειμένου"
+      },
+      "sortByPublishDateAscending": {
+        "label": "Ταξινόμηση κατά ημερομηνία δημοσίευσης (αύξουσα)"
+      },
+      "sortPostsWithoutPublishDateToTheTop": {
+        "label": "Τοποθετήστε αναρτήσεις χωρίς ημερομηνία δημοσίευσης στην κορυφή"
+      },
+      "maximumAmountOfPosts": {
+        "label": "Μέγιστος αριθμός αναρτήσεων"
       }
     },
     "card": {

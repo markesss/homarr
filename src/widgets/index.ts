@@ -6,12 +6,14 @@ import dnsHoleControls from './dnshole/DnsHoleControls';
 import dnsHoleSummary from './dnshole/DnsHoleSummary';
 import torrentNetworkTraffic from './download-speed/TorrentNetworkTrafficTile';
 import iframe from './iframe/IFrameTile';
+import indexerManager from './indexer-manager/IndexerManagerTile';
 import mediaRequestsList from './media-requests/MediaRequestListTile';
 import mediaRequestsStats from './media-requests/MediaRequestStatsTile';
 import mediaServer from './media-server/MediaServerTile';
 import notebook from './notebook/NotebookWidgetTile';
 import rss from './rss/RssWidgetTile';
 import smartHomeEntityState from './smart-home/entity-state/entity-state.widget';
+import smartHomeTriggerAutomation from './smart-home/trigger-automation/trigger-automation.widget';
 import torrent from './torrent/TorrentTile';
 import usenet from './useNet/UseNetTile';
 import videoStream from './video/VideoStreamTile';
@@ -19,6 +21,7 @@ import weather from './weather/WeatherTile';
 
 export default {
   calendar,
+  'indexer-manager': indexerManager,
   dashdot,
   usenet,
   weather,
@@ -35,5 +38,6 @@ export default {
   'dns-hole-controls': dnsHoleControls,
   bookmark,
   notebook,
-  'smart-home/entity-state': smartHomeEntityState
+  'smart-home/entity-state': smartHomeEntityState,
+  'smart-home/trigger-automation': smartHomeTriggerAutomation,
 };

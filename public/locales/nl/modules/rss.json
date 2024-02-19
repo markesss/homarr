@@ -17,6 +17,15 @@
       },
       "textLinesClamp": {
         "label": "Tekstregels klem"
+      },
+      "sortByPublishDateAscending": {
+        "label": ""
+      },
+      "sortPostsWithoutPublishDateToTheTop": {
+        "label": ""
+      },
+      "maximumAmountOfPosts": {
+        "label": ""
       }
     },
     "card": {

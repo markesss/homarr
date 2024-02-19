@@ -8,26 +8,26 @@ import { configExists } from '~/tools/config/configExists';
 import { getConfig } from '~/tools/config/getConfig';
 import { getFrontendConfig } from '~/tools/config/getFrontendConfig';
 import { BackendConfigType, ConfigType } from '~/types/config';
-import { boardCustomizationSchema } from '~/validations/boards';
+import { boardCustomizationSchema, configNameSchema } from '~/validations/boards';
 import { IRssWidget } from '~/widgets/rss/RssWidgetTile';
 
 import { adminProcedure, createTRPCRouter, publicProcedure } from '../trpc';
 
-export const configNameSchema = z.string().regex(/^[a-zA-Z0-9-_]+$/);
-
 export const configRouter = createTRPCRouter({
   delete: adminProcedure
+    .meta({ openapi: { method: 'DELETE', path: '/configs', tags: ['config'] } })
     .input(
       z.object({
         name: configNameSchema,
-      }),
+      })
     )
+    .output(z.object({ message: z.string() }))
     .mutation(async ({ input }) => {
       if (input.name.toLowerCase() === 'default') {
-        Consola.error('Rejected config deletion because default configuration can\'t be deleted');
+        Consola.error("Rejected config deletion because default configuration can't be deleted");
         throw new TRPCError({
           code: 'FORBIDDEN',
-          message: 'Default config can\'t be deleted',
+          message: "Default config can't be deleted",
         });
       }
 
@@ -44,7 +44,7 @@ export const configRouter = createTRPCRouter({
       // If the target is not in the list of files, return an error
       if (!matchedFile) {
         Consola.error(
-          `Rejected config deletion request because config name '${input.name}' was not included in present configurations`,
+          `Rejected config deletion request because config name '${input.name}' was not included in present configurations`
         );
         throw new TRPCError({
           code: 'NOT_FOUND',
@@ -64,9 +64,13 @@ export const configRouter = createTRPCRouter({
       z.object({
         name: configNameSchema,
         config: z.custom<ConfigType>((x) => !!x && typeof x === 'object'),
-      }),
+        create: z.boolean().optional(),
+      })
     )
     .mutation(async ({ input }) => {
+      if (input.create && configExists(input.name))
+        throw new TRPCError({ message: 'Config already exists.', code: 'CONFLICT' });
+
       Consola.info(`Saving updated configuration of '${input.name}' config.`);
 
       const previousConfig = getConfig(input.name);
@@ -96,16 +100,16 @@ export const configRouter = createTRPCRouter({
                 }
 
                 const previousApp = previousConfig.apps.find(
-                  (previousApp) => previousApp.id === app.id,
+                  (previousApp) => previousApp.id === app.id
                 );
 
                 const previousProperty = previousApp?.integration?.properties.find(
-                  (previousProperty) => previousProperty.field === property.field,
+                  (previousProperty) => previousProperty.field === property.field
                 );
 
                 if (property.value !== undefined && property.value !== null) {
                   Consola.info(
-                    'Detected credential change of private secret. Value will be overwritten in configuration',
+                    'Detected credential change of private secret. Value will be overwritten in configuration'
                   );
                   return {
                     field: property.field,
@@ -162,11 +166,22 @@ export const configRouter = createTRPCRouter({
       };
     }),
   byName: publicProcedure
+    .meta({
+      openapi: {
+        method: 'GET',
+        path: '/configs/byName',
+        tags: ['config'],
+        deprecated: true,
+        summary:
+          'Retrieve content of the JSON configuration. Deprecated because JSON will be removed in a future version and be replaced with a relational database.',
+      },
+    })
     .input(
       z.object({
         name: configNameSchema,
-      }),
+      })
     )
+    .output(z.custom<ConfigType>())
     .query(async ({ ctx, input }) => {
       if (!configExists(input.name)) {
         throw new TRPCError({
@@ -179,6 +194,7 @@ export const configRouter = createTRPCRouter({
     }),
   saveCustomization: adminProcedure
     .input(boardCustomizationSchema.and(z.object({ name: configNameSchema })))
+    .output(z.void())
     .mutation(async ({ input }) => {
       const previousConfig = getConfig(input.name);
       const newConfig = {

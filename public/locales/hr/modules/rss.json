@@ -17,6 +17,15 @@
       },
       "textLinesClamp": {
         "label": "Ograničavanje broja redaka teksta"
+      },
+      "sortByPublishDateAscending": {
+        "label": ""
+      },
+      "sortPostsWithoutPublishDateToTheTop": {
+        "label": ""
+      },
+      "maximumAmountOfPosts": {
+        "label": ""
       }
     },
     "card": {
